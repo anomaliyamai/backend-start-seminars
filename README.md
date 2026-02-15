@@ -1,2 +1,6 @@
-# backend-start-seminars
-Код с семинаров курса Бэкенд Старт 02.2026
+# Backend Start — код семинаров
+
+## Семинары
+
+- [Seminar 01](./seminar-01)
+- [Seminar 02](./seminar-02)
