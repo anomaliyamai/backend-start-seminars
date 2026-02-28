@@ -4,3 +4,5 @@
 
 - [Seminar 01](./seminar-01)
 - [Seminar 02](./seminar-02)
+- [Seminar 03](./seminar-03)
+- [Seminar 04](./seminar-04)

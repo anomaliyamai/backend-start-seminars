@@ -1,0 +1,64 @@
+basePath: /
+definitions:
+  main.ErrorResponse:
+    properties:
+      code:
+        type: integer
+      message:
+        type: string
+    type: object
+  main.User:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: Минимальный пример сервера с OpenAPI и разными кодами ошибок
+  title: Example API
+  version: "1.1"
+paths:
+  /ping:
+    get:
+      description: Возвращает pong
+      responses:
+        "200":
+          description: pong
+          schema:
+            type: string
+      summary: Проверка сервера
+      tags:
+      - system
+  /users/{id}:
+    get:
+      description: Возвращает пользователя по ID или ошибку
+      parameters:
+      - description: ID пользователя
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.User'
+        "400":
+          description: Неверный ID
+          schema:
+            $ref: '#/definitions/main.ErrorResponse'
+        "404":
+          description: Пользователь не найден
+          schema:
+            $ref: '#/definitions/main.ErrorResponse'
+        "500":
+          description: Внутренняя ошибка сервера
+          schema:
+            $ref: '#/definitions/main.ErrorResponse'
+      summary: Получить пользователя
+      tags:
+      - users
+swagger: "2.0"
